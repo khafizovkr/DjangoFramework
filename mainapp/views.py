@@ -15,6 +15,12 @@ def products(request):
     context = {
         'title': 'GeekShop | Каталог',
         'products': Product.objects.all(),
-        'categories': ProductCategory.objects.all()
+        'categories': ProductCategory.objects.all(),
     }
     return render(request, 'mainapp/products.html', context)
+
+def detail(request):
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'mainapp/detail.html', context)
